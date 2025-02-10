@@ -11,12 +11,12 @@ import (
 	"github.com/golang-jwt/jwt"
 	"github.com/PhilippP3/devops-lecture-project/pkg/auth"
 	"github.com/PhilippP3/devops-lecture-project/pkg/products"
-	"github.com/PhilippP3/devops-lecture-project/pkg/internal"
+	"github.com/PhilippP3/devops-lecture-project/internal/handler"
 	"github.com/gorilla/mux"
 )
 
 var secretKey = []byte("secret-key")
-
+auth.
 
 func main() {
 	router := mux.NewRouter()
