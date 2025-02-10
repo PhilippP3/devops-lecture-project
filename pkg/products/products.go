@@ -9,18 +9,17 @@ type Product struct {
 
 // Static data for three products
 var products = []Product{
-	{ID: 1, Name: "Product 1", Price: 19.99},
-	{ID: 2, Name: "Product 2", Price: 29.99},
-	{ID: 3, Name: "Product 3", Price: 39.99},
+	{ID: 1, Name: "Samsung Galaxy A 35", Price: 309.99},
+	{ID: 2, Name: "Xiaomi Redmi Note 14", Price: 231.21},
+	{ID: 3, Name: "Honor Magic7 Pro", Price: 1379.99},
 }
-
 
 // FindProductByID searches for a product by its ID
 func FindProductByID(products []Product, id int) *Product {
-    for _, product := range products {
-        if product.ID == id {
-            return &product
-        }
-    }
-    return nil
+	for _, product := range products {
+		if product.ID == id {
+			return &product
+		}
+	}
+	return nil
 }
