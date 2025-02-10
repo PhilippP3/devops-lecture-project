@@ -1,4 +1,4 @@
-module github.com/<user/org>/<repo>
+module github.com/PhilippP3/devops-lecture-project
 go 1.23.6
 
 require (
