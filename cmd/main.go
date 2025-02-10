@@ -1,22 +1,14 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
-	"strconv"
-	"time"
 
-	"github.com/golang-jwt/jwt"
-	"github.com/PhilippP3/devops-lecture-project/pkg/auth"
-	"github.com/PhilippP3/devops-lecture-project/pkg/products"
-	"github.com/PhilippP3/devops-lecture-project/pkg/internal"
 	"github.com/gorilla/mux"
 )
 
 var secretKey = []byte("secret-key")
-
 
 func main() {
 	router := mux.NewRouter()
@@ -32,4 +24,3 @@ func main() {
 	log.Printf("Server is running on port %d...\n", port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", port), router))
 }
-
