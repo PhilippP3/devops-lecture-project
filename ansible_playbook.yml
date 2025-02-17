@@ -3,7 +3,8 @@
   hosts: all
   become: yes
   tasks:
-    - name: Install Docker
+    - name: Install requirements
       apt:
-        name: docker.io
-        state: present
+        name: 
+        - git
+      become: true
