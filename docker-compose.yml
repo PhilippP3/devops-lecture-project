@@ -1,0 +1,11 @@
+version: '3.8'
+
+
+services:
+  mainapp:
+    build: 
+      context: ./
+      dockerfile: dockerfile
+    container_name: go_shop
+    ports:
+      - "8080:8080"
