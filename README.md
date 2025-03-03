@@ -18,6 +18,7 @@ Tip for windows: docker run -d -p 8080:8080 webshop
 
 Deployment through bare metal using kubectl
 to acces run 
+- ``kubectl create namespace devopslect``
 - ``kubectl apply -f .\k8s\deployment.yml`` to create deployment
 - ``kubectl apply -f .\k8s\service.yml`` to create service 
 - `kubectl port-forward svc/shop-backend-service 8080:80` to use on localhost port 8080
