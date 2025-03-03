@@ -21,4 +21,5 @@ to acces run
 - ``kubectl create namespace devopslect``
 - ``kubectl apply -f .\k8s\deployment.yml`` to create deployment
 - ``kubectl apply -f .\k8s\service.yml`` to create service 
+it should be accessible at following link: http://localhost:30007/products, else you can try:
 - `kubectl port-forward svc/shop-backend-service 8080:80` to use on localhost port 8080
