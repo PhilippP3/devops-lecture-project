@@ -19,13 +19,29 @@ jobs:
       - name: Build using Makefile
         run: make build
 
-      - name: Run Executable
+
+      - name: Run Auth Service
         run: |
-          nohup make run &
+          nohup make run SERVICE=auth &
           SERVER_PID=$!
           
           sleep 5
+          kill $SERVER_PID
 
+      - name: Run Product Service
+        run: |
+          nohup make run SERVICE=product &
+          SERVER_PID=$!
+          
+          sleep 5
+          kill $SERVER_PID
+
+      - name: Run Checkout Service
+        run: |
+          nohup make run SERVICE=checkout &
+          SERVER_PID=$!
+          
+          sleep 5
           kill $SERVER_PID
 
       - name: Cleanup Build Artifacts
