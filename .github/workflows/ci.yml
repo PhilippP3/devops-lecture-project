@@ -1,0 +1,44 @@
+name: CI Pipeline
+
+on:
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.23.6'
+
+      - name: Run Auth Service
+        run: |
+          nohup make run SERVICE=auth-service &
+          SERVER_PID=$!
+          
+          sleep 5
+          kill $SERVER_PID
+
+      - name: Run Product Service
+        run: |
+          nohup make run SERVICE=product-service &
+          SERVER_PID=$!
+          
+          sleep 5
+          kill $SERVER_PID
+
+      - name: Run Checkout Service
+        run: |
+          nohup make run SERVICE=checkout-service &
+          SERVER_PID=$!
+          
+          sleep 5
+          kill $SERVER_PID
+
+      - name: Cleanup Build Artifacts
+        run: make clean
