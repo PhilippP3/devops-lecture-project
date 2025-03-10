@@ -1,7 +1,7 @@
 FILENAME = main
 
 build:
-	go build ./cmd/$(FILENAME).go
+	go build ./$(SERVICE)/cmd/$(FILENAME).go
 
 run: build
 	./$(FILENAME)
