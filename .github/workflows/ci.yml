@@ -20,7 +20,13 @@ jobs:
         run: make build
 
       - name: Run Executable
-        run: make run
+        run: |
+          nohup make run &
+          SERVER_PID=$!
+          
+          sleep 60
+
+          kill $SERVER_PID
 
       - name: Cleanup Build Artifacts
         run: make clean
