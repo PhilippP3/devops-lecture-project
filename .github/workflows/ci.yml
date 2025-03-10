@@ -24,7 +24,7 @@ jobs:
           nohup make run &
           SERVER_PID=$!
           
-          sleep 60
+          sleep 5
 
           kill $SERVER_PID
 
