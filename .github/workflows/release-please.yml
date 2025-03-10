@@ -16,5 +16,5 @@ jobs:
       - uses: google-github-actions/release-please-action@v4
         with:
           token: ${{ secrets.ACTION_KEY }}
-          config-file: .github/workflos/release-please-config.json
-          manifest-file: .github/workflos/.release-please-manifest.json
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
