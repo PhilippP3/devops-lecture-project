@@ -1,10 +1,10 @@
 FILENAME = main
 
 build:
-	go build .\cmd\$(FILENAME).go
+	go build ./cmd/$(FILENAME).go
 
 run: build
-	.\$(FILENAME).exe
+	./$(FILENAME).exe
 
 clean:
-	del .\$(FILENAME).exe
+	del ./$(FILENAME).exe
