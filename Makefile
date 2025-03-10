@@ -7,4 +7,4 @@ run: build
 	./$(FILENAME)
 
 clean:
-	del ./$(FILENAME)
+	rm ./$(FILENAME)
