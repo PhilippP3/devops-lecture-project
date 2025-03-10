@@ -4,7 +4,7 @@ build:
 	go build ./cmd/$(FILENAME).go
 
 run: build
-	./$(FILENAME).exe
+	./$(FILENAME)
 
 clean:
-	del ./$(FILENAME).exe
+	del ./$(FILENAME)
