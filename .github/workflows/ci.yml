@@ -22,7 +22,7 @@ jobs:
 
       - name: Run Auth Service
         run: |
-          nohup make run SERVICE=auth &
+          nohup make run SERVICE=auth-service &
           SERVER_PID=$!
           
           sleep 5
@@ -30,7 +30,7 @@ jobs:
 
       - name: Run Product Service
         run: |
-          nohup make run SERVICE=product &
+          nohup make run SERVICE=product-service &
           SERVER_PID=$!
           
           sleep 5
@@ -38,7 +38,7 @@ jobs:
 
       - name: Run Checkout Service
         run: |
-          nohup make run SERVICE=checkout &
+          nohup make run SERVICE=checkout-service &
           SERVER_PID=$!
           
           sleep 5
