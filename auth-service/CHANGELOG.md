@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/PhilippP3/devops-lecture-project/compare/auth-service-1.1.0...auth-service-1.1.1) (2025-03-14)
+
+
+### Bug Fixes
+
+* continued test for auth-service-1.1.1 ([bcb828a](https://github.com/PhilippP3/devops-lecture-project/commit/bcb828ae52b6235ade3db016b8126fee34c949d5))
+
 ## [1.1.0](https://github.com/PhilippP3/devops-lecture-project/compare/auth-service-1.0.0...auth-service-1.1.0) (2025-03-14)
 
 
