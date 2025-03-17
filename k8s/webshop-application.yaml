@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: shop-backend
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/PhilippP3/devops-lecture-project'
+    targetRevision: HEAD
+    path: k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: devopslect
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
