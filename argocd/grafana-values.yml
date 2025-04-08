@@ -1,0 +1,33 @@
+adminUser: admin
+adminPassword: admin
+
+# Persistent Storage für Dashboards und Einstellungen
+persistence:
+  enabled: true
+  storageClassName: standard
+  accessModes:
+    - ReadWriteOnce
+  size: 10Gi
+
+# Service-Typ für externen Zugriff (LoadBalancer oder ClusterIP)
+service:
+  type: LoadBalancer
+
+# Automatisches Erstellen eines CPU-Dashboards
+dashboards:
+  default:
+    cluster-cpu:
+      gnetId: 3119    # Grafana Dashboard ID für Kubernetes Cluster CPU Usage
+      revision: 1
+      datasource: Prometheus  # Name der Datenquelle (siehe unten)
+
+# Zusätzliche Datenquelle (Prometheus als Beispiel)
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        access: proxy
+        url: http://prometheus-server.monitoring.svc.cluster.local  # Anpassung nötig
+        isDefault: true
