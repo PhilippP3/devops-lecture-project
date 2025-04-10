@@ -14,7 +14,7 @@ func main() {
 	// Auth Service
 	router.HandleFunc("/auth/login", handler.AuthLoginHandler).Methods("POST")
 	router.HandleFunc("/auth/logout", handler.AuthLogoutHandler).Methods("POST")
-	port := 8080
+	port := 8081
 	log.Printf("Server is running on port %d...\n", port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", port), router))
 }

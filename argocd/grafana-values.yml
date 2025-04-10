@@ -1,0 +1,18 @@
+adminUser: admin
+adminPassword: admin
+
+persistence:
+  enabled: true
+  storageClassName: standard
+  accessModes:
+    - ReadWriteOnce
+  size: 10Gi
+
+service:
+  type: LoadBalancer
+
+dashboards:
+  default:
+    cluster-cpu:
+      gnetId: 3119
+      revision: 1
