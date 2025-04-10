@@ -2,10 +2,36 @@ version: '3.8'
 
 
 services:
-  mainapp:
+  products:
     build: 
-      context: ./
-      dockerfile: dockerfile
-    container_name: go_shop
+      context: .
+      dockerfile: product-service/dockerfile
+    container_name: go_shop_products
     ports:
       - "8080:8080"
+    networks:
+      - shop
+  
+  auth:
+    build:
+      context: .
+      dockerfile: auth-service/dockerfile
+    container_name: go_shop_auth
+    ports:
+      - "8081:8081"
+    networks:
+      - shop
+
+  checkout:
+    build:
+      context: .
+      dockerfile: checkout-service/dockerfile
+    container_name: go_shop_checkout
+    ports:
+      - "8082:8082"
+    networks:
+      - shop
+  
+networks:
+  shop:
+    driver: bridge
